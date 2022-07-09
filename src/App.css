@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.player-music {
+  background-color: #f87171 !important ;
+  height: 6.8rem;
+  max-height: 6.8rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.rhap_container {
+  background: #e5e7eb;
+}
+.rhap_time,
+.rhap_current-time {
+  color: #e5e7eb !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.rhap_main-controls-button {
+  width: 80px !important;
+  height: 80px !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.rhap_main-controls-button {
+  width: 56px;
+  height: 56px;
+  display: block;
 }
 
-.App-link {
-  color: #61dafb;
+.rhap_main-controls-button svg {
+  color: #e5e7eb;
+  width: 100%;
+  height: 100%;
+}
+.rhap_progress-filled,
+.rhap_progress-indicator {
+  background-color: #e5e7eb !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rhap_button-clear.rhap_volume-button {
+  color: #e5e7eb !important;
+}
+.rhap_button-clear.rhap_repeat-button svg {
+  color: #e5e7eb !important;
+}
+.rhap_volume-bar,
+.rhap_volume-indicator {
+  background-color: #e5ebeb;
 }

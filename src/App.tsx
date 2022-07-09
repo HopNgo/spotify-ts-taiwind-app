@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useState } from "react";
+import "./App.css";
+import DetailSong from "./components/DetailSong/DetailSong";
+import Header from "./components/Header/Header";
+import ListSong from "./components/ListSong/ListSong";
+import Playing from "./components/Playing/Playing";
+import { SongContext } from "./contexts/SongContext";
+import ISong from "./interfaces/Song.interface";
 
 function App() {
+  const songs = useContext(SongContext);
+  const [songActive, setSongActive] = useState<ISong>(songs[0]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="grid grid-cols-3">
+        <div>
+          <DetailSong songActive={songActive} />
+        </div>
+        <div className="col-span-2">
+          <ListSong songActive={songActive} setSongActive={setSongActive} />
+        </div>
+      </div>
+      <div>
+        <Playing songActive={songActive} setSongActive={setSongActive} />
+      </div>
     </div>
   );
 }
